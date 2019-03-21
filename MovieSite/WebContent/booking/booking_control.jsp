@@ -17,8 +17,6 @@
 <%
 	String action = request.getParameter("action");
 	boolean isLogin = (session.getAttribute("name_mem") != null);
-	//로그인. 나중에 구현. 구현하면 지울것!!
-	
 	
 	if(action.equals("create")) {
 		//1.예약 정보 DB생성 

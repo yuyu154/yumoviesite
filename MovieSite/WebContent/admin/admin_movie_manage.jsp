@@ -25,20 +25,21 @@
 <HR>
 <div>
 <form name="myForm" method="post" action="/movie/movie_control.jsp" >
-<input type="hidden" name="action" value="delete">
-<input type="hidden" name="id_film" >
-<table border="1">
-<tr><th>제목</th> <th>이용가</th> <th>좌석 수</th> <th>개봉 기간</th> <th>Operation</th> </tr>
-<c:forEach var="i" items="${list}">
-<tr> 
-	<td>${i.name_film}</td> 
-	<td>${i.age_phase}세 이용가</td> 
-	<td>${i.seat_num}</td> 
-	<td>${i.movie_date}</td> 
-	<td><input type="button" value="Remove" OnClick="mySubmit(${i.id_film})"></td>
-</tr>
-</c:forEach>
-</table>
+	<input type="hidden" name="action" value="delete">
+	<input type="hidden" name="id_film" >
+	
+	<table border="1">
+		<tr><th>제목</th> <th>이용가</th> <th>좌석 수</th> <th>개봉 기간</th> <th>Operation</th> </tr>
+		<c:forEach var="i" items="${list}">
+		<tr> 
+			<td>${i.name_film}</td> 
+			<td>${i.age_phase}세 이용가</td> 
+			<td>${i.seat_num}</td> 
+			<td>${i.movie_date}</td> 
+			<td><input type="button" value="Remove" OnClick="mySubmit(${i.id_film})"></td>
+		</tr>
+		</c:forEach>
+	</table>
 </form>
 </div>
 

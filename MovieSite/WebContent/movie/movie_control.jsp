@@ -52,7 +52,7 @@
 			list = movieDAO.getDBList();
 			request.setAttribute("list", list);
 			//System.out.println(list);
-			pageContext.forward("/movie/admin_movie_manage.jsp");
+			pageContext.forward("/admin/admin_movie_manage.jsp");
 		}
 		else if(action.equals("delete")) {
 

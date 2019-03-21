@@ -26,9 +26,9 @@
 		</table>
 </form>
 
-<a href="admin_login.jsp">관리자 로그인</a>
+<a href="/admin/admin_login.jsp">관리자 로그인</a>
 <HR>
-<a href="user_register.jsp">회원가입</a> <BR>
+<a href="/user/user_register.jsp">회원가입</a> <BR>
 <HR>
 
 <h3>
