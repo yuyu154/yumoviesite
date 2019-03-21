@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="mytag" tagdir="/WEB-INF/tags" %>
 
-<jsp:useBean id="list" class="java.util.ArrayList" type = "java.util.ArrayList<movie.Movie>" scope="request" />
+<jsp:useBean id="list" class="java.util.ArrayList" scope="request" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,7 +31,7 @@
 </c:choose>
 
 
-<form name="myForm" method="post" action="seat/seat_control.jsp">
+<form name="myForm" method="post" action="/seat/seat_control.jsp">
 	<input type="hidden" name="action" value="seatSet" >
 	<input type="hidden" name="id_film" >
 	<table border="1">

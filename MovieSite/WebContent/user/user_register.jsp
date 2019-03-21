@@ -13,7 +13,7 @@
 
 <center>
 
-<form name="myForm" method="post" action="user_control.jsp">
+<form name="myForm" method="post" action="/user/user_control.jsp">
 <input type="hidden" name="action" value="register">
 <table border="1">
 <tr> <th>ID</th> <td><input type="text" style="IME-MODE: disabled" name="name_mem" required ></td> </tr> 

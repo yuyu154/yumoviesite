@@ -13,7 +13,7 @@
 <center>
 <%System.out.println("유저_로그인.jsp 실행"); %>
 
-<form name="myForm" method="post" action="user/user_control.jsp" >
+<form name="myForm" method="post" action="/user/user_control.jsp" >
 	<input type="hidden" name="action" value="login">
 	
 		<table border="1" width="150" >

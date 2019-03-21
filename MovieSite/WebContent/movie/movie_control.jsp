@@ -4,7 +4,7 @@
     
 <jsp:useBean id="movie" class="movie.Movie" scope="request"/>
 <jsp:useBean id="movieDAO" class="movie.MovieDAO" />
-<jsp:useBean id="list" class="java.util.ArrayList" scope="request" />
+<jsp:useBean id="list" class="java.util.ArrayList" scope="request" type="java.util.ArrayList<movie.Movie>"/>
 <jsp:setProperty name="movie" property="*" />
 
 <jsp:useBean id="ms_set" class="seat.MovieSeatSet" scope="request" />

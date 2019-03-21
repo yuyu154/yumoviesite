@@ -10,7 +10,7 @@
 
 <jsp:useBean id="user" class="user.User" />
 <jsp:useBean id="userDAO" class="user.UserDAO" />
-<jsp:useBean id="list" class="java.util.ArrayList<booking.MovieBooking>" scope="request" />
+<jsp:useBean id="list" class="java.util.ArrayList" scope="request" />
 
 <jsp:useBean id="msDAO" class="seat.MovieSeatDAO" />
 
@@ -61,7 +61,7 @@
 		list = mbDAO.getUserList(user.getId_mem());
 
 		request.setAttribute("list", list);
-		pageContext.forward("/booing/booking_list.jsp");
+		pageContext.forward("/booking/booking_list.jsp");
 	}
 	
 	if(action.equals("delete")) {

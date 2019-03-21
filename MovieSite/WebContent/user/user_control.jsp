@@ -26,8 +26,8 @@
 			System.out.println("유저 컨트롤에서 로그인작업 수행");
 			user = userDAO.getDB(name_mem);		
 			session.setAttribute("name_mem",user.getName_mem());	//세션에 회원 정보값 저장. 로그인 구현.
-			System.out.println("로그인 세션값:" + session.getAttribute("name_mem"));	//확인작업
-			pageContext.forward("seat_control.jsp?action=seatSet");
+			//System.out.println("로그인 세션값:" + session.getAttribute("name_mem"));	//확인작업
+			pageContext.forward("/seat/seat_control.jsp?action=seatSet");
 		}
 		else {
 			out.println("<script>alert('로그인 불가능(아이디,비밀번호가 다릅니다)'); history.go(-1)</script>");
