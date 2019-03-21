@@ -16,6 +16,7 @@
 	boolean isAdminLogin = (session.getAttribute("admin_login") != null);
 	//user객체에 name_mem, password 전달됨.
 	//id_mem,가입날짜,age= null값.
+	
 	if(action.equals("login")) {
 		//request로 입력받기.
 		System.out.println(user);
@@ -26,8 +27,8 @@
 			System.out.println("유저 컨트롤에서 로그인작업 수행");
 			user = userDAO.getDB(name_mem);		
 			session.setAttribute("name_mem",user.getName_mem());	//세션에 회원 정보값 저장. 로그인 구현.
-			System.out.println("로그인 세션값:" + session.getAttribute("name_mem"));	//확인작업
-			pageContext.forward("seat_control.jsp?action=seatSet");
+			//System.out.println("로그인 세션값:" + session.getAttribute("name_mem"));	//확인작업
+			pageContext.forward("/seat/seat_control.jsp?action=seatSet");
 		}
 		else {
 			out.println("<script>alert('로그인 불가능(아이디,비밀번호가 다릅니다)'); history.go(-1)</script>");
@@ -62,7 +63,7 @@
 			//일정 설정
 			System.out.println("회원가입: 현재 user객체 상태: "+user);
 			userDAO.insertDB(user);
-			pageContext.forward("user_login.jsp");
+			pageContext.forward("/user/user_login.jsp");
 		}
 	}
 	//회원정보변경할때 호출	
@@ -83,7 +84,7 @@
 			user.setPassword(pwd);
 			user.setAge_mem(age);
 			userDAO.updateDB(user);
-			pageContext.forward("seat_control.jsp?action=seatSet");
+			pageContext.forward("/seat/seat_control.jsp?action=seatSet");
 		}
 	}
 	//로그아웃
@@ -91,11 +92,11 @@
 		
 		if(isLogin) {
 			session.setAttribute("name_mem", null);
-			pageContext.forward("movie_control.jsp?action=list");
+			pageContext.forward("/movie/movie_control.jsp?action=list");
 		}
 		else if(isAdminLogin){
 			session.setAttribute("admin_login", null);
-			pageContext.forward("movie_control.jsp?action=list");
+			pageContext.forward("/movie/movie_control.jsp?action=list");
 		}
 	}
 	//관리자 로그인
@@ -111,7 +112,7 @@
 			user = userDAO.getDB(name_mem);		
 			session.setAttribute("admin_login",user.getName_mem());	//세션에 아이디 저장.
 			System.out.println("로그인 세션값:" + session.getAttribute("name_mem"));	//확인작업
-			pageContext.forward("movie_control.jsp?action=admin_list");
+			pageContext.forward("/movie/movie_control.jsp?action=admin_list");
 		}
 		else {
 			out.println("<script>alert('관리자가 아닙니다'); history.go(-1)</script>");
@@ -130,14 +131,14 @@
 		//아이디는 유일한 값이므로 가능.
 		//유저 지워지면 에앾정보 지워질듯. 확인해볼것.
 		System.out.println("예약정보도 지워지는지 확인");
-		pageContext.forward("user_control.jsp?action=list");
+		pageContext.forward("/user/user_control.jsp?action=list");
 	}
 	//관리자에서 보여줄 유저 리스트
 	if(action.equals("list")) {
 		System.out.println("유저 컨트롤에서 관리자 리스트 작업 수행");
 		request.setAttribute("list",userDAO.getDBList());
 		System.out.println(request.getAttribute("list"));
-		pageContext.forward("admin_user_manage.jsp");
+		pageContext.forward("/admin/admin_user_manage.jsp");
 	}
 
 %>

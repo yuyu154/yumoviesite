@@ -21,26 +21,26 @@
 <body>
 <mytag:logout />
 
-<a href="movie_control.jsp?action=admin_list">Back</a> <a>Member management</a>
+<a href="/movie/movie_control.jsp?action=admin_list">Back</a> <a>Member management</a>
 <HR>
-<form name="myForm" method="post" action="user_control.jsp" >
-<input type="hidden" name="action" value="delete">
-<input type="hidden" name="id_mem" >
-<table border="1">
-<tr>
-<th>ID</th> <th>Age</th> <th>가입일</th> <th>Operation</th>
-</tr>
-<!-- list 받아온다음 처리 -->
-<c:forEach var="i" items="${list}" >
-<tr>
-<td>${i.name_mem}</td>
-<td>${i.age_mem}</td>
-<td>${i.register_date}</td>
-<td><input type="button" value="remove" OnClick="mySubmit(${i.id_mem})"> </td>
-</tr>
-</c:forEach>
-
-</table>
+<form name="myForm" method="post" action="/user/user_control.jsp" >
+	<input type="hidden" name="action" value="delete">
+	<input type="hidden" name="id_mem" >
+	<table border="1">
+		<tr>
+		<th>ID</th> <th>Age</th> <th>가입일</th> <th>Operation</th>
+		</tr>
+		<!-- list 받아온다음 처리 -->
+		<c:forEach var="i" items="${list}" >
+		<tr>
+		<td>${i.name_mem}</td>
+		<td>${i.age_mem}</td>
+		<td>${i.register_date}</td>
+		<td><input type="button" value="remove" OnClick="mySubmit(${i.id_mem})"> </td>
+		</tr>
+		</c:forEach>
+	
+	</table>
 </form>
 
 

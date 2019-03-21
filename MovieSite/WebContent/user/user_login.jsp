@@ -13,7 +13,7 @@
 <center>
 <%System.out.println("유저_로그인.jsp 실행"); %>
 
-<form name="myForm" method="post" action="user/user_control.jsp" >
+<form name="myForm" method="post" action="/user/user_control.jsp" >
 	<input type="hidden" name="action" value="login">
 	
 		<table border="1" width="150" >
@@ -26,9 +26,9 @@
 		</table>
 </form>
 
-<a href="admin_login.jsp">관리자 로그인</a>
+<a href="/admin/admin_login.jsp">관리자 로그인</a>
 <HR>
-<a href="user_register.jsp">회원가입</a> <BR>
+<a href="/user/user_register.jsp">회원가입</a> <BR>
 <HR>
 
 <h3>

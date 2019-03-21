@@ -10,15 +10,13 @@
 
 <jsp:useBean id="user" class="user.User" />
 <jsp:useBean id="userDAO" class="user.UserDAO" />
-<jsp:useBean id="list" class="java.util.ArrayList<booking.MovieBooking>" scope="request" />
+<jsp:useBean id="list" class="java.util.ArrayList" scope="request" />
 
 <jsp:useBean id="msDAO" class="seat.MovieSeatDAO" />
 
 <%
 	String action = request.getParameter("action");
 	boolean isLogin = (session.getAttribute("name_mem") != null);
-	//로그인. 나중에 구현. 구현하면 지울것!!
-	
 	
 	if(action.equals("create")) {
 		//1.예약 정보 DB생성 
@@ -61,7 +59,7 @@
 		list = mbDAO.getUserList(user.getId_mem());
 
 		request.setAttribute("list", list);
-		pageContext.forward("/booing/booking_list.jsp");
+		pageContext.forward("/booking/booking_list.jsp");
 	}
 	
 	if(action.equals("delete")) {

@@ -24,32 +24,32 @@
 <H2>영화 '${movie.name_film} '의 예약 페이지입니다</H2>
 <HR>
 
-<form name="myForm" method="post" action="seat_control.jsp" >
-<input type="hidden" name="action" value="update" >
-<input type="hidden" name="seat_no" >
-
-<table border="1">
-<tr><th>좌석 번호</th> <th>좌석 현황</th> <th>예매</th> </tr>
-<c:forEach var="item" items="${ms_set.seats}" varStatus="status">
-<tr><td>${status.count}</td>
-
-<c:choose> 
-<c:when test="${item == 1}">
-<td>이용 가능</td> 
-<td><input type="button" value="예매" onClick= "mySubmit(${status.count})"></td>
-</c:when>
-<c:when test="${item == 0}">
-<td>이용 불가</td> 
-<td><input type="button" value="완료" ></td>
-</c:when>
-</c:choose>
-
-</tr>
-</c:forEach>
-
-</table>
+<form name="myForm" method="post" action="/seat/seat_control.jsp" >
+	<input type="hidden" name="action" value="update" >
+	<input type="hidden" name="seat_no" >
+	
+	<table border="1">
+		<tr><th>좌석 번호</th> <th>좌석 현황</th> <th>예매</th> </tr>
+		<c:forEach var="item" items="${ms_set.seats}" varStatus="status">
+		<tr><td>${status.count}</td>
+		
+		<c:choose> 
+		<c:when test="${item == 1}">
+		<td>이용 가능</td> 
+		<td><input type="button" value="예매" onClick= "mySubmit(${status.count})"></td>
+		</c:when>
+		<c:when test="${item == 0}">
+		<td>이용 불가</td> 
+		<td><input type="button" value="완료" ></td>
+		</c:when>
+		</c:choose>
+		
+		</tr>
+		</c:forEach>
+		
+	</table>
 </form>
 <HR>
-<a href="user_change_info.jsp">회원 정보 변경</a>
+<a href="/user/user_change_info.jsp">회원 정보 변경</a>
 </body>
 </html>

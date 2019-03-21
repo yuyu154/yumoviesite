@@ -41,10 +41,10 @@
 			
 			
 			if(temp_sum == 0) {
-				out.println("<script>alert('좌석이 모두 매진되었습니다'); location.replace('movie_control.jsp?action=list') </script>");
+				out.println("<script>alert('좌석이 모두 매진되었습니다'); location.replace('/movie/movie_control.jsp?action=list') </script>");
 			}
 			else if(movie.getAge_phase() > user.getAge_mem() ) {
-				out.println("<script>alert('회원분의 나이가 관람가보다 어립니다'); location.replace('movie_control.jsp?action=list') </script>");
+				out.println("<script>alert('회원분의 나이가 관람가보다 어립니다'); location.replace('/movie/movie_control.jsp?action=list') </script>");
 			}
 			else {	//seat을 위한 정상 처리 값.
 				session.setAttribute("id_seat", ms_set.getId_seat());
